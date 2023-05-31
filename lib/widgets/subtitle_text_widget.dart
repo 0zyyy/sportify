@@ -11,10 +11,11 @@ class SubtitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
         text,
-        style: GoogleFonts.bebasNeue(
+        style: GoogleFonts.inter(
             textStyle: TextStyle(
                 fontSize: 16,
-                color: Colors.white
+                color: Colors.white,
+              fontWeight: FontWeight.w600
             )
         )
     );

@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Color buttonColor;
   final String text;
   final Color textColor;
-  const PrimaryButton({
+  int? width;
+  int? height;
+  PrimaryButton({
     super.key, required this.buttonColor, required this.text, required this.textColor,
+    this.width, this.height
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 17,right: 17),
-      width: MediaQuery.of(context).size.width / 1.149,
-      height: MediaQuery.of(context).size.height  / 14.23,
+      width: width?.w,
+      height: height?.h,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.white, width: 1),
           color: buttonColor),

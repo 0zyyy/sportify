@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sportify/widgets/form_field_widget.dart';
+import 'package:sportify/widgets/header_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
 import 'package:sportify/widgets/subtitle_text_widget.dart';
 import 'package:sportify/widgets/title_text_widget.dart';
@@ -14,23 +15,21 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-
   bool agreeTerm = false;
 
   void _onAgreeTerm(bool? value) => setState(() {
-    agreeTerm = value!;
+        agreeTerm = value!;
 
-    if(agreeTerm){
-      // TODO:
-    }else{
-      // TODO:
-    }
-  });
+        if (agreeTerm) {
+          // TODO:
+        } else {
+          // TODO:
+        }
+      });
 
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
@@ -48,38 +47,30 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                padding: EdgeInsets.all(16),
-                width: double.infinity,
-                height: 246,
-                decoration: BoxDecoration(
-                  color: Color(0xFFFF5050),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset('assets/images/logo_white.svg',
-                      fit: BoxFit.fitWidth,),
-                    SizedBox(height: 100,),
-                    TitleText(
-                      text: "CREATE YOUR SPORTIFY ID",
-                    ),
-                    SubtitleText(
-                      text: 'Get news,game updates highlights and more info on your favorite teams',
-                    ),
-                  ],
-                ),
+              HeaderComponent(
+                titleText: "CREATE YOUR SPOTIFY ID",
+                subtitleText:
+                    "Get news,game updates highlights and more info on your favorite teams",
+                backgroundText: "JOIN",
               ),
               Container(
                 padding: EdgeInsets.all(6),
-                child: Column(children: [
-                  FormFieldWidget(labelText: "First Name",),
-                  FormFieldWidget(labelText: "Last Name",),
-                  FormFieldWidget(labelText: "Email",),
-                  FormFieldWidget(labelText: "Password",),
-                  ],),
+                child: Column(
+                  children: [
+                    FormFieldWidget(
+                      labelText: "First Name",
+                    ),
+                    FormFieldWidget(
+                      labelText: "Last Name",
+                    ),
+                    FormFieldWidget(
+                      labelText: "Email",
+                    ),
+                    FormFieldWidget(
+                      labelText: "Password",
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
@@ -90,12 +81,22 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               Row(
                 children: [
-                  Checkbox(value: false,onChanged: _onAgreeTerm),
-                  Text("I agree with Terms and Services",style: GoogleFonts.bebasNeue(),)
+                  Checkbox(value: false, onChanged: _onAgreeTerm),
+                  Text(
+                    "I agree with Terms and Services",
+                    style: GoogleFonts.bebasNeue(),
+                  )
                 ],
               ),
-              PrimaryButton(buttonColor: Colors.black,textColor: Colors.white,text: "CREATE ACCOUNT",),
-              SizedBox(height: 30,)
+              PrimaryButton(
+                buttonColor: Colors.black,
+                textColor: Colors.white,
+                text: "CREATE ACCOUNT",
+                height: 8,
+              ),
+              SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

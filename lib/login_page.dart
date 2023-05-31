@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sportify/widgets/form_field_widget.dart';
+import 'package:sportify/widgets/header_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
 import 'package:sportify/widgets/title_text_widget.dart';
 
@@ -47,41 +48,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Stack(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(16),
-                    width: double.infinity,
-                    height: 246,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFFF5050),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/images/logo_white.svg',
-                          fit: BoxFit.fitWidth,
-                        ),
-                        SizedBox(
-                          height: 100,
-                        ),
-                        TitleText(
-                          text: "SIGN IN WITH YOU \nSPORTIYFY ID",
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(right: 5,bottom: 20,child: Text("JOIN",style: GoogleFonts.bebasNeue(
-                    textStyle: TextStyle(
-                      color: Colors.white30,
-                      fontSize: 128
-                    )
-                  ),)),
-                ],
-              ),
+              HeaderComponent(titleText: "SIGN IN WITH YOUR \nSPOTIFY ID",backgroundText: "SIGN IN",),
               Container(
                 padding: EdgeInsets.all(10),
                 child: Column(
@@ -103,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       buttonColor: Colors.black,
                       textColor: Colors.white,
                       text: "SIGN IN",
+                      height: 7,
                     ),
                     SizedBox(
                       height: 16,
@@ -122,7 +90,9 @@ class _LoginPageState extends State<LoginPage> {
                     PrimaryButton(
                         buttonColor: Colors.grey,
                         text: "SIGN UP",
-                        textColor: Color(0xFF322D2D))
+                        textColor: Color(0xFF322D2D),
+                      height: 7,
+                    )
                   ],
                 ),
               ),
