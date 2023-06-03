@@ -3,21 +3,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SubtitleText extends StatelessWidget {
   final String text;
+  final double textSize;
+  final Color textColor;
   const SubtitleText({
-    super.key, required this.text,
+    super.key,
+    required this.text,
+    this.textSize = 14,
+    this.textColor = Colors.white,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-        text,
+    return Text(text,
         style: GoogleFonts.inter(
             textStyle: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-              fontWeight: FontWeight.w600
-            )
-        )
-    );
+                fontSize: textSize,
+                color: textColor,
+                fontWeight: FontWeight.w600)));
   }
 }

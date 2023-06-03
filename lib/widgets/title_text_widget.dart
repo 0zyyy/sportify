@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
+  final Color textColor;
+  final double textSize;
   const TitleText({
-    super.key, required this.text,
+    super.key, required this.text,this.textColor = Colors.white,this.textSize = 28,
   });
 
   @override
@@ -13,9 +15,9 @@ class TitleText extends StatelessWidget {
         text,
         style: GoogleFonts.bebasNeue(
             textStyle: TextStyle(
-                fontSize: 28,
+                fontSize: textSize,
                 fontWeight: FontWeight.bold,
-                color: Colors.white
+                color: textColor
             )
         )
     );

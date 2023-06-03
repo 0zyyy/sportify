@@ -33,10 +33,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             children: [
               Stack(
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/background.svg',
+                  Container(
                     width: double.infinity,
-                    height: 458,
+                    child: SvgPicture.asset(
+                      'assets/images/background.svg',
+                      width: double.infinity,
+                      height: 458,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 360, left: 17),
@@ -79,11 +83,31 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              PrimaryButton(buttonColor: Color(0xFFFF5050),text: "Login",textColor: Colors.white,),
-              SizedBox(height: 5,),
-              PrimaryButton(buttonColor: Colors.grey,text: "Create Account",textColor: Colors.black,),
-              SizedBox(height: 20,)
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 17, right: 17),
+                child: PrimaryButton(
+                  buttonColor: Color(0xFFFF5050),
+                  text: "Login",
+                  textColor: Colors.white,
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 17, right: 17),
+                child: PrimaryButton(
+                  buttonColor: Colors.grey,
+                  text: "Create Account",
+                  textColor: Colors.black,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              )
               // Container(
               //   width: 358,
               //   height: 48,

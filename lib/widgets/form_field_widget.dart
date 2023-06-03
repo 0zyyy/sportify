@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class FormFieldWidget extends StatelessWidget {
   final String labelText;
   bool? obscure;
-  FormFieldWidget({
-    super.key, required this.labelText,this.obscure = false
-  });
+  FormFieldWidget({super.key, required this.labelText, this.obscure = false});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +12,8 @@ class FormFieldWidget extends StatelessWidget {
       child: TextFormField(
         obscureText: false,
         decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
           filled: true,
           fillColor: Color(0xFFF4F4F4),
           labelText: labelText,

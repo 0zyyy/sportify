@@ -38,8 +38,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.height / 48);
-    print(MediaQuery.of(context).size.width / 358);
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -48,22 +46,24 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              HeaderComponent(titleText: "SIGN IN WITH YOUR \nSPOTIFY ID",backgroundText: "SIGN IN",),
+              const HeaderComponent(
+                titleText: "SIGN IN WITH YOUR \nSPOTIFY ID",
+                backgroundText: "SIGN IN",
+              ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(8),
                 child: Column(
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          FormFieldWidget(
-                            labelText: "Email",
-                          ),
-                          FormFieldWidget(labelText: "Password"),
-                        ],
-                      ),
+                    Column(
+                      children: [
+                        FormFieldWidget(
+                          labelText: "Email",
+                        ),
+                        FormFieldWidget(labelText: "Password"),
+                      ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     PrimaryButton(
@@ -72,25 +72,25 @@ class _LoginPageState extends State<LoginPage> {
                       text: "SIGN IN",
                       height: 7,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     Text(
                       'Your Sportify account is now Sportify ID. If you’ve signed into the app before, use the same credentials here. otherwise',
                       style: GoogleFonts.roboto(
-                          textStyle: TextStyle(fontSize: 12)),
+                          textStyle: const TextStyle(fontSize: 12)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
-                    Text("OR"),
-                    SizedBox(
+                    const Text("OR"),
+                    const SizedBox(
                       height: 16,
                     ),
                     PrimaryButton(
-                        buttonColor: Colors.grey,
-                        text: "SIGN UP",
-                        textColor: Color(0xFF322D2D),
+                      buttonColor: Colors.grey,
+                      text: "SIGN UP",
+                      textColor: const Color(0xFF322D2D),
                       height: 7,
                     )
                   ],
@@ -103,4 +103,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

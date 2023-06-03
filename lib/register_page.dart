@@ -54,6 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 backgroundText: "JOIN",
               ),
               Container(
+                margin: EdgeInsets.all(10),
                 padding: EdgeInsets.all(6),
                 child: Column(
                   children: [
@@ -88,11 +89,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   )
                 ],
               ),
-              PrimaryButton(
-                buttonColor: Colors.black,
-                textColor: Colors.white,
-                text: "CREATE ACCOUNT",
-                height: 8,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: PrimaryButton(
+                  buttonColor: Colors.black,
+                  textColor: Colors.white,
+                  text: "CREATE ACCOUNT",
+                  height: 8,
+                ),
               ),
               SizedBox(
                 height: 30,
