@@ -6,14 +6,14 @@ import 'package:sportify/login_page.dart';
 import 'package:sportify/widgets/header_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
 
-class FollowTeamsWidget extends StatefulWidget {
-  const FollowTeamsWidget({Key? key}) : super(key: key);
+class FollowTeamsPage extends StatefulWidget {
+  const FollowTeamsPage({Key? key}) : super(key: key);
 
   @override
-  _FollowTeamsWidgetState createState() => _FollowTeamsWidgetState();
+  _FollowTeamsPageState createState() => _FollowTeamsPageState();
 }
 
-class _FollowTeamsWidgetState extends State<FollowTeamsWidget> {
+class _FollowTeamsPageState extends State<FollowTeamsPage> {
   @override
   void initState() {
     super.initState();
