@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:sportify/article_page.dart';
 import 'package:sportify/dashboard_page.dart';
+import 'package:sportify/follow_page.dart';
+import 'package:sportify/follow_player_page.dart';
+import 'package:sportify/hightlight_page.dart';
 import 'package:sportify/home_page.dart';
 import 'package:sportify/login_page.dart';
 import 'package:sportify/profile_page.dart';
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const DashboardPage(),
+        home: const HighlightPage(),
       );
     });
   }

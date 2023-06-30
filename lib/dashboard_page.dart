@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sportify/ui/theme.dart';
 import 'package:sportify/widgets/card_widget.dart';
+import 'package:sportify/widgets/chip_widget.dart';
 import 'package:sportify/widgets/form_field_widget.dart';
 import 'package:sportify/widgets/highlight_card_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
@@ -37,27 +38,13 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget ChipsSection() {
-    return Container(
-      // color: Colors.red,
+    return SizedBox(
       width: double.infinity,
       height: 35,
       child: ListView.builder(
-        // physics: const ClampingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => PrimaryButton(
-            width: 85,
-            buttonColor: Colors.black,
-            text: "🔥Trending",
-            textSize: 14,
-            textColor: Colors.white),
+        itemBuilder: (context, index) => ChipWidget(),
         itemCount: 5,
-        // ChipHeader(),
-        // ChipHeader(),
-        // ChipHeader(),
-        // ChipHeader(),
-        // ChipHeader(),
-        // ChipHeader(),
-        // ],
       ),
     );
   }
@@ -89,7 +76,7 @@ class _DashboardPageState extends State<DashboardPage> {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const MyWidget();
+          return const TrendingCardWidget();
         },
         itemCount: 4,
       ),
@@ -149,7 +136,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 physics: const ClampingScrollPhysics(),
                 // shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const MyWidget(),
+                itemBuilder: (context, index) => const TrendingCardWidget(),
                 itemCount: 4,
               ),
             ),
@@ -159,7 +146,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: ListView.builder(
                 physics: const ClampingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const HighlighCard(),
+                itemBuilder: (context, index) => const HighlightCard(),
                 itemCount: 4,
               ),
             ),
@@ -180,49 +167,59 @@ class _DashboardPageState extends State<DashboardPage> {
               crossAxisCount: 2,
               shrinkWrap: true,
               children: List.generate(4, (index) {
-                return Container(
-                    margin:
-                        const EdgeInsets.only(left: 16, right: 16, bottom: 8),
-                    height: 214,
-                    width: 171,
-                    color: Colors.white,
-                    child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 300,
-                          height: 125,
-                          decoration: const BoxDecoration(
-                              color: Colors.red,
-                              image: DecorationImage(
-                                  image: AssetImage('assets/images/goal.png'),
-                                  fit: BoxFit.cover)),
-                        ),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        Text(
-                          "Qatar World Cup 2022",
-                          style: AppTheme.subtitleTextStyle.copyWith(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: AppTheme.medium),
-                        ),
-                        Text("Best of Portugal goals against Switzerland",
-                            textAlign: TextAlign.center,
-                            style: AppTheme.subtitleTextStyle.copyWith(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: AppTheme.semiBold))
-                      ],
-                    ));
+                return CardGrid();
               }),
             )
           ],
         ),
       ),
     ));
+  }
+}
+
+class CardGrid extends StatelessWidget {
+  const CardGrid({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
+        height: 214,
+        width: 171,
+        color: Colors.white,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 300,
+              height: 125,
+              decoration: const BoxDecoration(
+                  color: Colors.red,
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/goal.png'),
+                      fit: BoxFit.cover)),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Text(
+              "Qatar World Cup 2022",
+              style: AppTheme.subtitleTextStyle.copyWith(
+                  color: Colors.black,
+                  fontSize: 12,
+                  fontWeight: AppTheme.medium),
+            ),
+            Text("Best of Portugal goals against Switzerland",
+                textAlign: TextAlign.center,
+                style: AppTheme.bodyTextStyle.copyWith(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: AppTheme.semiBold))
+          ],
+        ));
   }
 }
 
