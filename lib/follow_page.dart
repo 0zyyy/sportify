@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:sportify/login_page.dart';
+import 'package:sportify/widgets/chip_widget.dart';
 import 'package:sportify/widgets/header_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
 
@@ -80,9 +81,7 @@ class FollowCard extends StatelessWidget {
           Container(
             width: 50,
             height: 50,
-            clipBehavior: Clip.antiAlias,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle),
+            decoration: BoxDecoration(shape: BoxShape.circle),
             child: SvgPicture.asset('assets/images/chelsea.svg'),
           ),
           SizedBox(
@@ -100,12 +99,8 @@ class FollowCard extends StatelessWidget {
                       textStyle:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 ),
-                PrimaryButton(
-                  buttonColor: Color(0XFF150000),
+                ChipWidget(
                   text: "Follow",
-                  textColor: Colors.white,
-                  height: 4,
-                  width: 20,
                 )
               ],
             ),

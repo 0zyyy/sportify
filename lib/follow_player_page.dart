@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:sportify/login_page.dart';
+import 'package:sportify/widgets/chip_widget.dart';
 import 'package:sportify/widgets/header_widget.dart';
 import 'package:sportify/widgets/primary_button_widget.dart';
 
@@ -38,7 +39,7 @@ class _FollowPlayerPageState extends State<FollowPlayerPage> {
                 titleText: "FOLLOW YOUR \nFAVORITE PLAYER",
                 backgroundText: "PLAYER",
                 subtitleText:
-                "Get news,game updates highlights and more info on your favorite player",
+                    "Get news,game updates highlights and more info on your favorite player",
               ),
               Divider(
                 height: 10,
@@ -59,10 +60,11 @@ class _FollowPlayerPageState extends State<FollowPlayerPage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings")
-      ],
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
+        ],
       ),
     );
   }
@@ -86,8 +88,7 @@ class FollowCard extends StatelessWidget {
             width: 50,
             height: 50,
             clipBehavior: Clip.antiAlias,
-            decoration:
-            BoxDecoration(shape: BoxShape.circle),
+            decoration: BoxDecoration(shape: BoxShape.circle),
             child: SvgPicture.asset('assets/images/chelsea.svg'),
           ),
           SizedBox(
@@ -105,21 +106,19 @@ class FollowCard extends StatelessWidget {
                     Text(
                       'CHELSEA',
                       style: GoogleFonts.inter(
-                          textStyle:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                          textStyle: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold)),
                     ),
-                    Text("Football | #5 | F",style: GoogleFonts.inter(textStyle: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF5B5757)
-                    )),)
+                    Text(
+                      "Football | #5 | F",
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 12, color: Color(0xFF5B5757))),
+                    )
                   ],
                 ),
-                PrimaryButton(
-                  buttonColor: Color(0XFF150000),
+                ChipWidget(
                   text: "Follow",
-                  textColor: Colors.white,
-                  height: 4,
-                  width: 20,
                 )
               ],
             ),
