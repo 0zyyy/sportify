@@ -3,8 +3,8 @@ import 'package:sportify/ui/theme.dart';
 import 'package:sportify/widgets/subtitle_text_widget.dart';
 import 'package:sportify/widgets/title_text_widget.dart';
 
-class HighlighCard extends StatelessWidget {
-  const HighlighCard({super.key});
+class HighlightCard extends StatelessWidget {
+  const HighlightCard({super.key});
 
   @override
   Widget build(BuildContext context) {

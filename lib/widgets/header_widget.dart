@@ -41,7 +41,7 @@ class _HeaderComponentState extends State<HeaderComponent> {
         Container(
           padding: EdgeInsets.all(16),
           width: double.infinity,
-          height: 30.h,
+          height: 35.h,
           decoration: BoxDecoration(
             color: Color(0xFFFF5050),
           ),

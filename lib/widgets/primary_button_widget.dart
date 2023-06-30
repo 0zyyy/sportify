@@ -45,9 +45,12 @@ class PrimaryButton extends StatelessWidget {
                 .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
         painter: RPSCustomPainter(buttonColor),
         child: Center(
-          child: Text(
-            text,
-            style: AppTheme.buttonTextStyle.copyWith(fontSize: textSize),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              text,
+              style: AppTheme.buttonTextStyle.copyWith(fontSize: textSize),
+            ),
           ),
         ),
       ),
