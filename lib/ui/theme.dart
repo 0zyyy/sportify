@@ -8,6 +8,7 @@ class AppTheme {
   static const Color backgroundColor = Color(0xFFF4F4F4);
   static const Color backgroundColor2 = Color(0xFFFAFAFA);
   static const Color headerColor = Color(0xFFFF5050);
+  static const Color articleColor = Color(0xFF322D2D);
 
   // TextStyle
   static TextStyle titleTextStyle = GoogleFonts.bebasNeue(
