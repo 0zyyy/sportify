@@ -3,22 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:sportify/ui/theme.dart';
 
 class ChipWidget extends StatelessWidget {
-  const ChipWidget({super.key});
+  final String text;
+  final double width;
+  final double height;
+  final Color buttonColor;
+  const ChipWidget(
+      {super.key,
+      this.text = "🔥 Trending",
+      this.width = 100,
+      this.height = 45,
+      this.buttonColor = Colors.black});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      width: width,
+      height: height,
       margin: EdgeInsets.only(left: 10),
       child: CustomPaint(
         size: Size(
             108,
             (108 * 0.1340782122905028)
                 .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-        painter: RPSCustomPainter(Colors.black),
+        painter: RPSCustomPainter(buttonColor),
         child: Center(
           child: Text(
-            "🔥 Trending",
+            text,
             style: AppTheme.bodyTextStyle.copyWith(
                 fontSize: 12,
                 fontWeight: AppTheme.semiBold,
@@ -46,11 +56,11 @@ class RPSCustomPainter extends CustomPainter {
     path_0.close();
 
     Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Color(0xff150000).withOpacity(1.0);
+    paint_0_fill.color = buttonColor.withOpacity(1.0);
     canvas.drawPath(path_0, paint_0_fill);
 
     Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = Color(0xff150000).withOpacity(1.0);
+    paint_1_fill.color = buttonColor.withOpacity(1.0);
     canvas.drawRect(
         Rect.fromLTWH(
             size.width * 0.07407407, 0, size.width * 0.8518519, size.height),
@@ -64,7 +74,7 @@ class RPSCustomPainter extends CustomPainter {
     path_2.close();
 
     Paint paint_2_fill = Paint()..style = PaintingStyle.fill;
-    paint_2_fill.color = Color(0xff150000).withOpacity(1.0);
+    paint_2_fill.color = buttonColor.withOpacity(1.0);
     canvas.drawPath(path_2, paint_2_fill);
   }
 
